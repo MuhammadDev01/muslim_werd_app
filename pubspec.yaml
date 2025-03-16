@@ -16,14 +16,16 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  animated_splash_screen: ^1.3.0
   cupertino_icons: ^1.0.8
+  device_preview: ^1.2.0
   flutter:
     sdk: flutter
+  # flutter_animated_button: ^2.0.4
   flutter_screenutil: ^5.9.3
   icons_launcher: ^3.0.1
 
 dev_dependencies:
-
   flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
@@ -36,14 +38,12 @@ icons_launcher:
       enable: true
     ios:
       enable: true
-    windows:
-      enable: true
 
 # Generate images_app.dart file
 flutter_assets:
   assets_path: assets/images/
-  output_path: lib/
-  filename: ImagesApp.dart
+  output_path: lib/core/theming/
+  filename: assets.dart
   field_prefix: ""
   ignore_comments: true
 
@@ -51,11 +51,11 @@ flutter_assets:
 flutter:
   uses-material-design: true
 
-# Assets
+  # Assets
   assets:
     - assets/images/
-  
-# Fonts
+
+  # Fonts
   fonts:
     - family: Cairo
       fonts:
@@ -63,7 +63,7 @@ flutter:
         - asset: assets/fonts/cairo/Cairo-Bold.ttf
         - asset: assets/fonts/cairo/Cairo-ExtraBold.ttf
         - asset: assets/fonts/cairo/Cairo-Regular.ttf
-    
+
     - family: Amiri
       fonts:
         - asset: assets/fonts/Amiri/Amiri-Bold.ttf

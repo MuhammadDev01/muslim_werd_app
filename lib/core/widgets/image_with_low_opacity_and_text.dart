@@ -18,10 +18,10 @@ class ImageWithLowOpacityAndText extends StatelessWidget {
           fit: BoxFit.cover,
           backgroundImage,
         ),
-        Container(
+        SizedBox(
           width: double.infinity,
           height: double.infinity,
-          color: Colors.black54,
+          //color: Colors.black54,
           child: child,
         ),
       ],

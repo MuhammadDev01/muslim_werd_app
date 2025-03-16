@@ -1,37 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:muslim_werd_app/core/constants.dart';
-import 'package:muslim_werd_app/core/theming/assets.dart';
-import 'package:muslim_werd_app/core/widgets/image_with_low_opacity_and_text.dart';
+import 'package:muslim_werd_app/features/onboarding/ui/widgets/onboarding_first_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
 
-  final List<String> imagesBoardingList = const [
-    Assets.imagesMushaf,
-    Assets.imagesMushaf,
-    Assets.imagesMushaf,
+  final List<Widget> onBoardingScreens = const [
+    OnboardingFirstScreen(),
+    Center(child: Text('Second Screen')),
+    Center(child: Text('third Screen')),
   ];
+
   @override
   Widget build(BuildContext context) {
+    // final heightScreen = MediaQuery.sizeOf(context).height;
+    // final widthScreen = MediaQuery.sizeOf(context).width;
     return Scaffold(
       body: PageView(
-        allowImplicitScrolling: true,
-        children: List.generate(
-          3,
-          (index) => ImageWithLowOpacityAndText(
-            backgroundImage: imagesBoardingList[index],
-            child: Text(
-              'اقرأورتل القران ترتيبلا',
-
-              style: TextStyle(
-                fontSize: 30,
-                color: Colors.white,
-                fontFamily: fontAmiri,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ),
+        children: List.generate(3, (index) => onBoardingScreens[index]),
       ),
     );
   }

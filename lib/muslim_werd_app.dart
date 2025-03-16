@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:muslim_werd_app/core/routing/app_router.dart';
@@ -9,9 +10,14 @@ class MuslimWerdApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(736, 1309),
+      designSize: const Size(720, 1280),
+
       minTextAdapt: true,
       child: MaterialApp(
+        
+        locale: DevicePreview.locale(context),
+        builder: DevicePreview.appBuilder,
+
         title: 'Muslim Werd',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(),
