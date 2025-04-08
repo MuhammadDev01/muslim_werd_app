@@ -14,16 +14,14 @@ class MuslimWerdApp extends StatelessWidget {
 
       minTextAdapt: true,
       child: MaterialApp(
-        
         locale: DevicePreview.locale(context),
         builder: DevicePreview.appBuilder,
-
         title: 'Muslim Werd',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(),
+        theme: ThemeData(brightness: Brightness.dark),
         initialRoute: Routes.onBoardingScreen,
         onGenerateRoute: AppRouter.generateRoute,
-        //darkTheme: ThemeData.dark(),
+        darkTheme: ThemeData.dark(),
         //themeMode: ThemeMode.light,
       ),
     );

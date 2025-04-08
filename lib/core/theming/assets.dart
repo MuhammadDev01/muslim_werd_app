@@ -18,6 +18,8 @@ class Assets {
 
   static const String imagesMobileBackground = "assets/images/mobile_background.jpeg";
 
+  static const String imagesOnBoardingSchedule = "assets/images/onBoarding_schedule.png";
+
   static const String imagesOnboardingCircleDesign = "assets/images/onboarding_circle_design.png";
 
   static const String imagesOnboardingMushaf = "assets/images/onboarding_mushaf.jpeg";
