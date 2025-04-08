@@ -65,7 +65,7 @@ class _OnboardingThirdScreenState extends State<OnboardingThirdScreen>
           child: CustomButton(
             child: Text('توكل على الله', style: TextStyles.cairo30Bold),
             onPressed: () {
-              context.pushNamedAndRemoveUntil(Routes.homeScreen, (p0) => true);
+              context.pushNamedAndRemoveUntil(Routes.homeScreen, (_) => false);
             },
           ),
         ),
@@ -75,7 +75,7 @@ class _OnboardingThirdScreenState extends State<OnboardingThirdScreen>
 
   _animatedListBookmarks() {
     return Align(
-      alignment: Alignment(0, 0.8.h),
+      alignment: Alignment(0, 0.5.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children:
