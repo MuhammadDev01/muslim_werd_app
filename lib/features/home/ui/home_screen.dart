@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:muslim_werd_app/core/widgets/backgoroud_app.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -32,19 +33,14 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Center(
-        child: AnimatedBuilder(
-          animation: _animation,
-          builder:
-              (_, child) => AnimatedScale(
-                scale: _animation.value,
-                duration: Duration(seconds: 2),
-                child: child,
-              ),
-          child: Text('HomeScreen'),
-        ),
+      body: Stack(
+        alignment: Alignment.center,
+        children: [
+          BackgroundApp(),
+       
+        ],
       ),
     );
   }
 }
+

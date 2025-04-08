@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ImageWithLowOpacityAndText extends StatelessWidget {
-  const ImageWithLowOpacityAndText({
+class BackgroundLowOpacityWithText extends StatelessWidget {
+  const BackgroundLowOpacityWithText({
     super.key,
     required this.backgroundImage,
     required this.child,

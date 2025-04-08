@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:muslim_werd_app/core/theming/assets.dart';
 import 'package:muslim_werd_app/core/theming/styles.dart';
+import 'package:muslim_werd_app/core/widgets/backgoroud_app.dart';
 import 'package:muslim_werd_app/core/widgets/custom_button.dart';
 import 'package:muslim_werd_app/features/onboarding/ui/onboarding_screen.dart';
 import 'package:muslim_werd_app/features/onboarding/ui/widgets/onboarding_top_title.dart';
@@ -43,7 +44,7 @@ class _OnboardingSecondScreenState extends State<OnboardingSecondScreen>
     return Stack(
       alignment: Alignment.center,
       children: [
-        Positioned(top: 10, child: Image.asset(Assets.imagesEllipse)),
+        BackgroundApp(),
         AnimatedBuilder(
           animation: _animation,
           builder:
@@ -68,7 +69,7 @@ class _OnboardingSecondScreenState extends State<OnboardingSecondScreen>
         Positioned(
           bottom: 50.h,
           child: CustomButton(
-            child: Text('استمرار', style: TextStyles.cairo30Bold),
+            textButton: 'استمرار',
             onPressed: () {
               OnboardingScreen.pageController.nextPage(
                 duration: Durations.medium3,

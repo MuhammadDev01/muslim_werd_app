@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:muslim_werd_app/core/routing/routes.dart';
-import 'package:muslim_werd_app/features/home/home_screen.dart';
+import 'package:muslim_werd_app/features/home/ui/home_screen.dart';
 import 'package:muslim_werd_app/features/onboarding/ui/onboarding_screen.dart';
 import 'package:muslim_werd_app/features/onboarding/ui/onboarding_first_screen.dart';
 import 'package:muslim_werd_app/features/onboarding/ui/onboarding_second_screen.dart';
