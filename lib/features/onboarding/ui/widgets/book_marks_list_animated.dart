@@ -8,7 +8,7 @@ class BookMarksListAnimated extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: Alignment(0, 0.5.h),
+      alignment: Alignment(0, 0.55.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children:

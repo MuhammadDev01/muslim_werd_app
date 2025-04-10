@@ -11,7 +11,7 @@ class AnimatedBookmarkItem extends StatelessWidget {
   final Animation bookmarkAnimation;
   final Color color;
   static List<Color> colorsList = const [
-    Colors.redAccent,
+    Colors.deepOrange,
     Colors.blue,
     Colors.white,
     Colors.purple,
@@ -28,7 +28,7 @@ class AnimatedBookmarkItem extends StatelessWidget {
     
       child: Image.asset(
         'assets/images/bookmark.png',
-        width: 90.w,
+        width: 70.w,
         color: color,
       ),
     );

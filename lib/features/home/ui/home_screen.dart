@@ -1,34 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:muslim_werd_app/core/widgets/backgoroud_app.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:muslim_werd_app/core/theming/assets.dart';
+import 'package:muslim_werd_app/features/home/logic/home_grid_view_item_model.dart';
+import 'package:muslim_werd_app/features/home/ui/widgets/background_home.dart';
+import 'package:muslim_werd_app/features/home/ui/widgets/home_grid_view.dart';
+import 'package:muslim_werd_app/features/home/ui/widgets/home_grid_view_item.dart';
+import 'package:muslim_werd_app/features/home/ui/widgets/home_top_title.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen>
-    with SingleTickerProviderStateMixin {
-  late final Animation _animation;
-  late final AnimationController _animationController;
-
-  @override
-  void initState() {
-    _animationController = AnimationController(
-      duration: Duration(seconds: 2),
-      vsync: this,
-    )..repeat(reverse: true);
-    _animation = Tween<double>(begin: 1, end: 3).animate(_animationController);
-
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _animationController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,11 +16,36 @@ class _HomeScreenState extends State<HomeScreen>
       body: Stack(
         alignment: Alignment.center,
         children: [
-          BackgroundApp(),
-       
+          BackgroundHome(),
+          Column(
+            spacing: 10,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Spacer(),
+              (DateTime.now().hour >= 5 && DateTime.now().hour < 17)
+                  ? HomeTopTitle(
+                    title: 'أَصْبَحْنَا وَأَصْـبَـحَ الْمُـلْكُ لِلَّهِ',
+                  )
+                  : HomeTopTitle(title: 'أَمْسَيْـنا وَأَمْـسـى المُـلكُ لله'),
+
+              Spacer(),
+              SizedBox(width: 500.w, child: HomeGridView()),
+              SizedBox(
+                width: 250.w,
+                height: 250.h,
+                child: HomeGridViewItem(
+                  homeModel: HomeGridViewItemModel(
+                    image: Assets.imagesRadio,
+                    text: 'إذاعة القرآن \nالكريم',
+                  ),
+                ),
+              ),
+
+              Spacer(flex: 5),
+            ],
+          ),
         ],
       ),
     );
   }
 }
-

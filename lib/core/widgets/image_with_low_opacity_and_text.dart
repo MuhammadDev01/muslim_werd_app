@@ -12,16 +12,23 @@ class BackgroundLowOpacityWithText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.asset(
-          width: double.infinity,
-          height: double.infinity,
-          fit: BoxFit.cover,
-          backgroundImage,
+        ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: Image.asset(
+            width: double.infinity,
+            height: double.infinity,
+            fit: BoxFit.cover,
+            backgroundImage,
+          ),
         ),
-        SizedBox(
+        Container(
+          alignment: Alignment.center,
           width: double.infinity,
           height: double.infinity,
-          //color: Colors.black54,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            color: Colors.black54,
+          ),
           child: child,
         ),
       ],
