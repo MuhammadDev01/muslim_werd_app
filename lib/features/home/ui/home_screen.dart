@@ -18,6 +18,7 @@ class HomeScreen extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           BackgroundHome(),
+
           HomeNavBarBottom.index == 0
               ? HomeScreenComponents()
               : ScheduleScreen(),
@@ -33,30 +34,38 @@ class HomeScreenComponents extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      spacing: 10,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Spacer(),
-        (DateTime.now().hour >= 5 && DateTime.now().hour < 17)
-            ? HomeTopTitle(title: 'أَصْبَحْنَا وَأَصْـبَـحَ الْمُـلْكُ لِلَّهِ')
-            : HomeTopTitle(title: 'أَمْسَيْـنا وَأَمْـسـى المُـلكُ لله'),
-
-        Spacer(),
-        SizedBox(width: 500.w, child: HomeGridView()),
-        SizedBox(
-          width: 250.w,
-          height: 250.h,
-          child: HomeGridViewItem(
-            homeModel: HomeGridViewItemModel(
-              image: Assets.imagesRadio,
-              text: 'إذاعة القرآن \nالكريم',
+    return SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.all(20.0.sp),
+        child: Column(
+          spacing: 10,
+          children: [
+            AppBar(
+              backgroundColor: Colors.transparent,
+              automaticallyImplyLeading: false,
+              title: HomeTopTitle(),
+              centerTitle: true,
+              actions: [
+                Image.asset(
+                  Assets.imagesSettingsIcon,
+                  height: 60.h,
+                  width: 60.w,
+                ),
+              ],
             ),
-          ),
+            HomeGridView(),
+            AspectRatio(
+              aspectRatio: 3,
+              child: HomeGridViewItem(
+                homeModel: HomeGridViewItemModel(
+                  image: Assets.imagesRadio,
+                  text: 'إذاعة القرآن  \nالكريم من القاهرة',
+                ),
+              ),
+            ),
+          ],
         ),
-
-        Spacer(flex: 5),
-      ],
+      ),
     );
   }
 }

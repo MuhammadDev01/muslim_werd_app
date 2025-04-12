@@ -60,8 +60,8 @@ class _OnboardingSecondScreenState extends State<OnboardingSecondScreen>
           child: Column(
             spacing: 8,
             children: [
-              Text('تابع وردك بشكل يومي', style: TextStyles.cairo30Bold),
-              Text('للحفاظ على المداومة عليها', style: TextStyles.cairo30Bold),
+              Text('تابع وردك بشكل يومي', style: TextStyles.cairo30Bold(context)),
+              Text('للحفاظ على المداومة عليها', style: TextStyles.cairo30Bold(context)),
             ],
           ),
         ),

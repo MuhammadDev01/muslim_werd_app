@@ -14,9 +14,9 @@ class OnboardingBottomTitle extends StatelessWidget {
         children: [
           Text(
             'أكثر من علامة حفظ إذا لديك أكثر من ختمة',
-            style: TextStyles.cairo30Bold,
+            style: TextStyles.cairo30Bold(context),
           ),
-          Text('!والمزيد', style: TextStyles.cairo30Bold),
+          Text('!والمزيد', style: TextStyles.cairo30Bold(context)),
         ],
       ),
     );

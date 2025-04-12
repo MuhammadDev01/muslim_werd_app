@@ -23,8 +23,6 @@ class BackgroundLowOpacityWithText extends StatelessWidget {
         ),
         Container(
           alignment: Alignment.center,
-          width: double.infinity,
-          height: double.infinity,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             color: Colors.black54,

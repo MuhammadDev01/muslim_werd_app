@@ -11,13 +11,10 @@ class HomeGridView extends StatelessWidget {
       image: Assets.imagesHolyQuran,
       text: "الـقـرآن\nالـكـريـم",
     ),
-    HomeGridViewItemModel(
-      image: Assets.imagesTasbeeh,
-      text: "تـسـبـيـح",
-    ),
+    HomeGridViewItemModel(image: Assets.imagesTasbeeh, text: "تـسـبـيـح"),
     HomeGridViewItemModel(
       image: Assets.imagesTa7kk,
-      text: 'التحقق من\n صحة حديث'
+      text: 'التحقق من\n صحة حديث',
     ),
     HomeGridViewItemModel(
       image: Assets.imagesAzkar,
@@ -35,7 +32,9 @@ class HomeGridView extends StatelessWidget {
         childAspectRatio: 1,
       ),
       itemBuilder:
-          (_, index) => HomeGridViewItem(homeModel: homeModelList[index]),
+          (_, index) => InkWell(
+            onTap: () {},
+            child: HomeGridViewItem(homeModel: homeModelList[index])),
       itemCount: homeModelList.length,
     );
   }

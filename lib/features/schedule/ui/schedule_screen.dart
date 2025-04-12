@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:muslim_werd_app/core/theming/colors.dart';
 
 class ScheduleScreen extends StatelessWidget {
   const ScheduleScreen({super.key});
@@ -14,7 +13,7 @@ class ScheduleScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<DateTime> dates = generateDates(days: 7); // الأسبوع الحالي
+    final List<DateTime> dates = generateDates(days: 7);
     return SizedBox(
       height: 100,
       child: ListView.builder(
@@ -42,7 +41,7 @@ class ScheduleScreen extends StatelessWidget {
                   style: TextStyle(color: Colors.white),
                 ),
                 Text(
-                    DateFormat.MMMMd('ar').format(date),
+                  DateFormat.MMMMd('ar').format(date),
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,

@@ -59,7 +59,7 @@ class _OnboardingFirstScreenState extends State<OnboardingFirstScreen>
           bottom: 200.h,
           child: Text(
             'اقرأ وردك ف اي وقت بدون انترنت ',
-            style: TextStyles.cairo30Bold,
+            style: TextStyles.cairo30Bold(context),
           ),
         ),
         Positioned(

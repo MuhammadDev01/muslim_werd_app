@@ -7,7 +7,7 @@ void main() {
   runApp(
     DevicePreview(
       builder: (context) => const MuslimWerdApp(),
-      enabled: !kReleaseMode,
+      enabled: kReleaseMode,
     ),
   );
 }

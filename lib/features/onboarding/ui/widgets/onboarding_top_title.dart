@@ -12,7 +12,7 @@ class OnboardingTopTitle extends StatelessWidget {
       top: 200.h,
       child: Text(
         text,
-        style: TextStyles.amiri36Bold.copyWith(fontFamily: fontCairo),
+        style: TextStyles.amiri24Bold(context).copyWith(fontFamily: fontCairo),
       ),
     );
   }

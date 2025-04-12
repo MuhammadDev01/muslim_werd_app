@@ -1,20 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:muslim_werd_app/core/theming/styles.dart';
 
 class HomeTopTitle extends StatelessWidget {
-  const HomeTopTitle({super.key, required this.title});
-  final String title;
+  const HomeTopTitle({super.key});
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Align(
-        alignment: Alignment.topCenter,
-        child: Padding(
-          padding: EdgeInsets.only(top: 30.sp),
-          child: Text(title, style: TextStyles.amiri36Bold),
-        ),
-      ),
+    return Text(
+      (DateTime.now().hour >= 5 && DateTime.now().hour < 17)
+          ? 'أَصْبَحْنَا وَأَصْـبَـحَ الْمُـلْكُ لِلَّهِ'
+          : 'أَمْسَيْـنا وَأَمْـسـى المُـلكُ لله',
+      style: TextStyles.uthmanTN124Bold(context),
     );
   }
 }

@@ -31,7 +31,7 @@ class CustomButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(radius.r),
         ),
       ),
-      child: Text(textButton, style: TextStyles.cairo30Bold.copyWith(fontSize: 25.sp)),
+      child: Text(textButton, style: TextStyles.cairo30Bold(context).copyWith(fontSize: 25.sp)),
     );
   }
 }

@@ -63,3 +63,7 @@ flutter:
       fonts:
         - asset: assets/fonts/Amiri/Amiri-Bold.ttf
         - asset: assets/fonts/Amiri/Amiri-Regular.ttf
+
+    - family: UthmanTN1
+      fonts:
+        - asset: assets/fonts/UthmanTN1-Ver10.otf
