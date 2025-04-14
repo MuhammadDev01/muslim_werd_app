@@ -9,7 +9,7 @@ class HomeTopTitle extends StatelessWidget {
       (DateTime.now().hour >= 5 && DateTime.now().hour < 17)
           ? 'أَصْبَحْنَا وَأَصْـبَـحَ الْمُـلْكُ لِلَّهِ'
           : 'أَمْسَيْـنا وَأَمْـسـى المُـلكُ لله',
-      style: TextStyles.uthmanTN124Bold(context),
+      style: TextStyles.uthman24Bold(context),
     );
   }
 }

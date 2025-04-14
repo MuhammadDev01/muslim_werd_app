@@ -1,84 +1,131 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:muslim_werd_app/core/theming/styles.dart';
 
-class ScheduleScreen extends StatelessWidget {
-  const ScheduleScreen({super.key});
-  List<DateTime> generateDates({required int days}) {
+class TableScreen extends StatefulWidget {
+  const TableScreen({super.key});
+
+  @override
+  State<TableScreen> createState() => _TableScreenState();
+}
+
+class _TableScreenState extends State<TableScreen> {
+  List<DateTime> generateDates() {
     DateTime now = DateTime.now();
-    return List.generate(
-      days,
-      (index) => now.subtract(Duration(days: index)),
-    ).reversed.toList();
+    return List.generate(7, (index) => now.add(Duration(days: index))).toList();
   }
+
+  final List<DateTime> dates = [];
+
+  @override
+  void initState() {
+    super.initState();
+    dates.addAll(generateDates());
+  }
+
+  // void toggleTask(DateTime date) {
+  //   setState(() {
+  //     taskMap[date]!.done = !taskMap[date]!.done;
+  //   });
+  // }
+
+  // void editTask(DateTime date) async {
+  //   final controller = TextEditingController();
+  //   await showDialog(
+  //     context: context,
+  //     builder:
+  //         (_) => AlertDialog(
+  //           title: Text('تعديل المهمة'),
+  //           content: TextField(
+  //             controller: controller,
+  //             decoration: InputDecoration(hintText: 'ادخل المهمة'),
+  //           ),
+  //           actions: [TextButton(child: Text('حفظ'), onPressed: () {})],
+  //         ),
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
-    final List<DateTime> dates = generateDates(days: 7);
-    return SizedBox(
-      height: 100,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: dates.length,
-        itemBuilder: (context, index) {
-          final date = dates[index];
-          final isToday =
-              date.day == DateTime.now().day &&
-              date.month == DateTime.now().month &&
-              date.year == DateTime.now().year;
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Table(
+          border: TableBorder.all(width: 2),
 
-          return Container(
-            margin: EdgeInsets.all(8),
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: isToday ? Colors.blue : Colors.grey[800],
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+          defaultColumnWidth: FlexColumnWidth(10),
+          // columnWidths:  Map<1, TableColumnWidth.>,
+          //textDirection: TextDirection.RTL,
+          children: [
+            TableRow(
+              decoration: BoxDecoration(color: Colors.blue),
               children: [
-                Text(
-                  DateFormat.EEEE('ar').format(date), // Fri, Sat
-                  style: TextStyle(color: Colors.white),
-                ),
-                Text(
-                  DateFormat.MMMMd('ar').format(date),
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                
+                CustomTableCell(title: 'أذكار الصباح'),
+                CustomTableCell(title: 'الورد اليومي'),
+                CustomTableCell(title: 'أذكار المساء'),
+                CustomTableCell(title: '/'),
               ],
             ),
-          );
-        },
+            for (var date in dates)
+              TableRow(
+                children: [
+                  TableCell(
+                    child: InkWell(
+                      onTap: () {},
+                      child: Center(child: Text('taskMap[date]!.title')),
+                    ),
+                  ),
+                  TableCell(
+                    child: Checkbox(
+                      activeColor: Colors.teal,
+                      checkColor: Colors.white,
+                      value: true,
+                      onChanged: (_) {},
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(12),
+                    child: TableCell(
+                      child: Center(
+                        child: Column(
+                          children: [
+                            Text(
+                              DateFormat.EEEE('ar').format(date),
+                              style: TextStyles.uthman24Bold(context),
+                            ),
+                            Text(
+                              DateFormat.MMMd('ar').format(date),
+                              style: TextStyles.uthman24Bold(
+                                context,
+                              ).copyWith(fontSize: 18),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+          ],
+        ),
       ),
     );
+  }
+}
 
-    // SingleChildScrollView(
-
-    //   child: Center(
-    //     child: Padding(
-    //       padding: const EdgeInsets.all(12),
-    //       child: Table(
-    //         border: TableBorder.all(width: 2),
-    //         children: [
-    //           TableRow(
-    //             decoration: BoxDecoration(color: ColorsManager.tealWithOpacity),
-    //             children: [
-    //               TableCell(child: Text('data')),
-    //               TableCell(child: Text('data')),
-    //             ],
-    //           ),
-    //           TableRow(
-    //             children: [
-    //               TableCell(child: Text('data')),
-    //               TableCell(child: Text('data')),
-    //             ],
-    //           ),
-    //         ],
-    //       ),
-    //     ),
-    //   ),
-    // );
+class CustomTableCell extends StatelessWidget {
+  const CustomTableCell({super.key, required this.title});
+  final String title;
+  @override
+  Widget build(BuildContext context) {
+    return TableCell(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Center(
+          child: Text(title, style: TextStyles.uthman14Bold(context)),
+        ),
+      ),
+    );
   }
 }

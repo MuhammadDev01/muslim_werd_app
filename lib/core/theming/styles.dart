@@ -16,8 +16,14 @@ class TextStyles {
     fontFamily: fontCairo,
     fontWeight: FontWeight.bold,
   );
-  static TextStyle uthmanTN124Bold(BuildContext context) => TextStyle(
+  static TextStyle uthman24Bold(BuildContext context) => TextStyle(
     fontSize: getResponsiveFontSize(context, fontSize: 24),
+    color: Colors.white,
+    fontFamily: fontUthmanTN1,
+    fontWeight: FontWeight.bold,
+  );
+  static TextStyle uthman14Bold(BuildContext context) => TextStyle(
+    fontSize: getResponsiveFontSize(context, fontSize: 18),
     color: Colors.white,
     fontFamily: fontUthmanTN1,
     fontWeight: FontWeight.bold,

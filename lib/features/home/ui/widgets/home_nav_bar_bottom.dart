@@ -5,10 +5,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:muslim_werd_app/core/theming/assets.dart';
 import 'package:muslim_werd_app/core/theming/colors.dart';
 import 'package:muslim_werd_app/core/theming/styles.dart';
+import 'package:muslim_werd_app/features/home/ui/home_screen.dart';
 
 class HomeNavBarBottom extends StatefulWidget {
   const HomeNavBarBottom({super.key});
-  static int index = 0;
   @override
   State<HomeNavBarBottom> createState() => _HomeNavBarBottomState();
 }
@@ -20,11 +20,12 @@ class _HomeNavBarBottomState extends State<HomeNavBarBottom> {
       backgroundColor: Colors.transparent,
       animationDuration: Duration(milliseconds: 500),
       color: ColorsManager.blackWithOpacity,
-      height: MediaQuery.sizeOf(context).height * 0.23.h,
+      height: 160.h,
       items: [
         CurvedNavigationBarItem(
           child: Image.asset(Assets.imagesHouseIcon, height: 48.h, width: 48.w),
           label: 'الرئيسية',
+
           labelStyle: TextStyles.amiri24Bold(
             context,
           ).copyWith(fontWeight: FontWeight.w900),
@@ -39,9 +40,7 @@ class _HomeNavBarBottomState extends State<HomeNavBarBottom> {
       ],
       onTap: (value) {
         setState(() {
-          if (HomeNavBarBottom.index != value) {
-            HomeNavBarBottom.index = value;
-          }
+          HomeScreen.index = value;
         });
       },
     );

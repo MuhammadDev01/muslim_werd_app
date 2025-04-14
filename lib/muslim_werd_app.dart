@@ -14,6 +14,8 @@ class MuslimWerdApp extends StatelessWidget {
 
       minTextAdapt: true,
       child: MaterialApp(
+        //        locale: Locale('ar'),
+        supportedLocales: [Locale('ar'), Locale('en')],
         locale: DevicePreview.locale(context),
         builder: DevicePreview.appBuilder,
         title: 'Muslim Werd',

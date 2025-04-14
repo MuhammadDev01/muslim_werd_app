@@ -12,25 +12,22 @@ import 'package:muslim_werd_app/features/schedule/ui/schedule_screen.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
   @override
+  final screens = const [MainScreen(), TableScreen()];
+  static int index = 0;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         alignment: Alignment.center,
-        children: [
-          BackgroundHome(),
-
-          HomeNavBarBottom.index == 0
-              ? HomeScreenComponents()
-              : ScheduleScreen(),
-        ],
+        children: [BackgroundHome(), screens[index]],
       ),
       bottomNavigationBar: HomeNavBarBottom(),
     );
   }
 }
 
-class HomeScreenComponents extends StatelessWidget {
-  const HomeScreenComponents({super.key});
+class MainScreen extends StatelessWidget {
+  const MainScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +35,7 @@ class HomeScreenComponents extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.all(20.0.sp),
         child: Column(
-          spacing: 10,
+          spacing: 30,
           children: [
             AppBar(
               backgroundColor: Colors.transparent,
@@ -46,10 +43,13 @@ class HomeScreenComponents extends StatelessWidget {
               title: HomeTopTitle(),
               centerTitle: true,
               actions: [
-                Image.asset(
-                  Assets.imagesSettingsIcon,
-                  height: 60.h,
-                  width: 60.w,
+                GestureDetector(
+                  onTap: () {},
+                  child: Image.asset(
+                    Assets.imagesSettingsIcon,
+                    width: 45.w,
+                    color: Colors.white,
+                  ),
                 ),
               ],
             ),
