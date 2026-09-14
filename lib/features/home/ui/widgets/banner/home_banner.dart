@@ -73,11 +73,13 @@ class _HomeBannerState extends State<HomeBanner>
 
   Widget _buildBanner(BuildContext context, PrayerScene scene) {
     return Container(
-      margin: const EdgeInsets.all(8),
       height: 200,
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(32),
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(30),
+          bottomRight: Radius.circular(30),
+        ),
         boxShadow: [
           BoxShadow(
             color: scene.primary.withValues(alpha: .16),

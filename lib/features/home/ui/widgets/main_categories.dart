@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 import 'package:muslim_werd_app/core/theme/app_colors.dart';
+import 'package:muslim_werd_app/core/theme/assets.dart';
 import 'package:muslim_werd_app/features/home/ui/widgets/category_card.dart';
 
 class MainCategories extends StatelessWidget {
@@ -11,28 +11,27 @@ class MainCategories extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(20, 15, 20, 0),
       child: Column(
+        spacing: 10,
         children: [
           Row(
+            spacing: 10,
             children: [
               Expanded(
                 child: CategoryCard(
                   title: 'الأذكار',
-                  subtitle: 'أذكار الصباح والمساء',
-                  icon: Icons.back_hand_outlined,
-                  background: AppColors.secondary,
+                  imageIcon: Assets.imagesAzkarIcon,
+                  background: AppColors.surface,
                   iconColor: AppColors.primary,
                   textColor: AppColors.textPrimary,
                   onTap: () {},
                 ),
               ),
 
-              const Gap(10),
-
               Expanded(
                 child: CategoryCard(
                   title: 'القرآن الكريم',
                   subtitle: 'تلاوة • تفسير • تدبر',
-                  icon: Icons.menu_book_outlined,
+                  imageIcon: Assets.imagesAzkarIcon,
                   background: AppColors.primary,
                   iconColor: AppColors.white,
                   textColor: AppColors.white,
@@ -42,15 +41,15 @@ class MainCategories extends StatelessWidget {
             ],
           ),
 
-          const Gap(10),
-
           Row(
+            spacing: 10,
+
             children: [
               Expanded(
                 child: CategoryCard(
                   title: 'المفضلة',
                   subtitle: 'ما تحب أن تعود إليه',
-                  icon: Icons.local_florist_outlined,
+                  imageIcon: Assets.imagesAzkarIcon,
                   background: AppColors.softGreen,
                   iconColor: AppColors.primary,
                   textColor: AppColors.textPrimary,
@@ -58,13 +57,11 @@ class MainCategories extends StatelessWidget {
                 ),
               ),
 
-              const Gap(10),
-
               Expanded(
                 child: CategoryCard(
                   title: 'الأحاديث النبوية',
                   subtitle: 'صحيح البخاري ومسلم',
-                  icon: Icons.account_balance_outlined,
+                  imageIcon: Assets.imagesAzkarIcon,
                   background: AppColors.softGold,
                   iconColor: AppColors.gold,
                   textColor: AppColors.textPrimary,

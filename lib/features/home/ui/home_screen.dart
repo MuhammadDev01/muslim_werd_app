@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:muslim_werd_app/core/theme/app_colors.dart';
+import 'package:muslim_werd_app/core/widgets/app_background.dart';
 import 'package:muslim_werd_app/features/home/ui/widgets/azkar_header.dart';
 import 'package:muslim_werd_app/features/home/ui/widgets/banner/home_banner.dart';
 import 'package:muslim_werd_app/features/home/ui/widgets/home_nav_bar_bottom.dart';
@@ -29,8 +30,11 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         backgroundColor: AppColors.background,
 
-        body: SafeArea(
-          child: selectedIndex == 0 ? _buildHomeContent() : const TableScreen(),
+        body: AppBackground(
+          child: SafeArea(
+            child:
+                selectedIndex == 0 ? _buildHomeContent() : const TableScreen(),
+          ),
         ),
 
         bottomNavigationBar: HomeNavBarBottom(
@@ -51,27 +55,25 @@ class _HomePageState extends State<HomePage> {
           (_) =>
               PrayerTimesCubit(repository: MockPrayerTimesRepository())
                 ..loadPrayerTimes(),
-      child: CustomScrollView(
+      child: ListView(
         physics: const BouncingScrollPhysics(),
-        slivers: [
-          SliverToBoxAdapter(
-            child: BlocBuilder<PrayerTimesCubit, PrayerTimesState>(
-              builder: (context, state) {
-                return HomeBanner(
-                  activePrayer: state.activePrayer,
-                  remaining: state.remaining,
-                  prayers: state.prayers,
-                );
-              },
-            ),
+        children: [
+          BlocBuilder<PrayerTimesCubit, PrayerTimesState>(
+            builder: (context, state) {
+              return HomeBanner(
+                activePrayer: state.activePrayer,
+                remaining: state.remaining,
+                prayers: state.prayers,
+              );
+            },
           ),
 
-          const SliverToBoxAdapter(child: MainCategories()),
-          const SliverToBoxAdapter(child: AzkarHeader()),
+          MainCategories(),
+          // const SliverToBoxAdapter(child: AzkarHeader()),
 
-          const SliverToBoxAdapter(child: MorningAzkar()),
+          // const SliverToBoxAdapter(child: MorningAzkar()),
 
-          const SliverToBoxAdapter(child: Gap(110)),
+          // const SliverToBoxAdapter(child: Gap(110)),
         ],
       ),
     );

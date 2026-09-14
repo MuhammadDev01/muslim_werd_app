@@ -6,6 +6,8 @@ class Assets {
 
   static const String imagesAzkar = "assets/images/azkar.jpg";
 
+  static const String imagesAzkarIcon = "assets/images/azkar_icon.png";
+
   static const String imagesBookmark = "assets/images/bookmark.png";
 
   static const String imagesEllipse = "assets/images/Ellipse.png";
@@ -31,8 +33,6 @@ class Assets {
   static const String imagesSebha = "assets/images/sebha.png";
 
   static const String imagesSettingsIcon = "assets/images/settings_icon.png";
-
-  static const String imagesSunAndMoon = "assets/images/sun_and_moon.png";
 
   static const String imagesTa7kk = "assets/images/ta7kk.jpg";
 

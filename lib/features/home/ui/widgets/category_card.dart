@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
+import 'package:muslim_werd_app/core/constants.dart';
 import 'package:muslim_werd_app/core/theme/app_colors.dart';
+import 'package:muslim_werd_app/core/theme/assets.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
     super.key,
     required this.title,
-    required this.subtitle,
-    required this.icon,
+    this.subtitle,
+    required this.imageIcon,
     required this.background,
     required this.iconColor,
     required this.textColor,
@@ -15,8 +16,8 @@ class CategoryCard extends StatelessWidget {
   });
 
   final String title;
-  final String subtitle;
-  final IconData icon;
+  final String? subtitle;
+  final String imageIcon;
   final Color background;
   final Color iconColor;
   final Color textColor;
@@ -35,14 +36,13 @@ class CategoryCard extends StatelessWidget {
           border: Border.all(color: AppColors.white.withValues(alpha: .7)),
         ),
         child: Stack(
+          alignment: Alignment.center,
           children: [
             Column(
+              spacing: 4,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(icon, size: 31, color: iconColor),
-
-                const Gap(8),
-
+                Image.asset(imageIcon, width: 30, height: 30),
                 Text(
                   title,
                   textAlign: TextAlign.center,
@@ -50,19 +50,19 @@ class CategoryCard extends StatelessWidget {
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: textColor,
+                    fontFamily: fontCairo,
                   ),
                 ),
-
-                const Gap(4),
-
-                Text(
-                  subtitle,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 8.5,
-                    color: textColor.withValues(alpha: .75),
+                if (subtitle != null)
+                  Text(
+                    subtitle!,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 8.5,
+                      color: textColor.withValues(alpha: .75),
+                      fontFamily: fontCairo,
+                    ),
                   ),
-                ),
               ],
             ),
 
