@@ -1,9 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:muslim_werd_app/core/theming/assets.dart';
-import 'package:muslim_werd_app/core/theming/styles.dart';
+import 'package:muslim_werd_app/core/theme/assets.dart';
+import 'package:muslim_werd_app/core/theme/app_styles.dart';
 import 'package:muslim_werd_app/core/widgets/backgoroud_app.dart';
 import 'package:muslim_werd_app/core/widgets/custom_button.dart';
 import 'package:muslim_werd_app/features/onboarding/ui/onboarding_screen.dart';
@@ -56,14 +55,14 @@ class _OnboardingFirstScreenState extends State<OnboardingFirstScreen>
           heightScreen: heightScreen,
         ),
         Positioned(
-          bottom: 200.h,
+          bottom: 200,
           child: Text(
             'اقرأ وردك ف اي وقت بدون انترنت ',
             style: TextStyles.cairo30Bold(context),
           ),
         ),
         Positioned(
-          bottom: 50.h,
+          bottom: 50,
           child: CustomButton(
             textButton: 'استمرار',
             onPressed: () {

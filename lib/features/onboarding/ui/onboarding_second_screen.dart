@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:muslim_werd_app/core/theming/assets.dart';
-import 'package:muslim_werd_app/core/theming/styles.dart';
+import 'package:muslim_werd_app/core/theme/assets.dart';
+import 'package:muslim_werd_app/core/theme/app_styles.dart';
 import 'package:muslim_werd_app/core/widgets/backgoroud_app.dart';
 import 'package:muslim_werd_app/core/widgets/custom_button.dart';
 import 'package:muslim_werd_app/features/onboarding/ui/onboarding_screen.dart';
@@ -56,18 +55,24 @@ class _OnboardingSecondScreenState extends State<OnboardingSecondScreen>
         ),
         OnboardingTopTitle(text: 'جدول متابعة لوردك'),
         Positioned(
-          bottom: 200.h,
+          bottom: 200,
           child: Column(
             spacing: 8,
             children: [
-              Text('تابع وردك بشكل يومي', style: TextStyles.cairo30Bold(context)),
-              Text('للحفاظ على المداومة عليها', style: TextStyles.cairo30Bold(context)),
+              Text(
+                'تابع وردك بشكل يومي',
+                style: TextStyles.cairo30Bold(context),
+              ),
+              Text(
+                'للحفاظ على المداومة عليها',
+                style: TextStyles.cairo30Bold(context),
+              ),
             ],
           ),
         ),
 
         Positioned(
-          bottom: 50.h,
+          bottom: 50,
           child: CustomButton(
             textButton: 'استمرار',
             onPressed: () {

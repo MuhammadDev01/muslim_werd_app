@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:muslim_werd_app/features/onboarding/ui/widgets/animated_bookmarks_item.dart';
 
 class BookMarksListAnimated extends StatelessWidget {
@@ -8,7 +7,7 @@ class BookMarksListAnimated extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: Alignment(0, 0.55.h),
+      alignment: Alignment(0, 0.55),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children:

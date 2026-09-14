@@ -1,6 +1,5 @@
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:muslim_werd_app/core/routing/app_router.dart';
 import 'package:muslim_werd_app/core/routing/routes.dart';
 
@@ -9,23 +8,19 @@ class MuslimWerdApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(720, 1280),
-
-      minTextAdapt: true,
-      child: MaterialApp(
-        //        locale: Locale('ar'),
-        supportedLocales: [Locale('ar'), Locale('en')],
-        locale: DevicePreview.locale(context),
-        builder: DevicePreview.appBuilder,
-        title: 'Muslim Werd',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(brightness: Brightness.dark),
-        initialRoute: Routes.homeScreen,
-        onGenerateRoute: AppRouter.generateRoute,
-        //darkTheme: ThemeData.dark(),
-        //themeMode: ThemeMode.light,
-      ),
+    return MaterialApp(
+      locale: const Locale('ar'),
+      supportedLocales: const [Locale('ar')],
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      title: 'Muslim Werd',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(brightness: Brightness.dark),
+      initialRoute: Routes.homeScreen,
+      onGenerateRoute: AppRouter.generateRoute,
     );
   }
 }

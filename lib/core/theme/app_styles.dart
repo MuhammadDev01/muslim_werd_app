@@ -1,36 +1,37 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:muslim_werd_app/core/constants.dart';
+import 'package:muslim_werd_app/core/theme/app_colors.dart';
 
 class TextStyles {
   static TextStyle amiri24Bold(BuildContext context) => TextStyle(
     fontSize: getResponsiveFontSize(context, fontSize: 24),
-    color: Colors.white,
+    color: AppColors.white,
     fontFamily: fontAmiri,
     fontWeight: FontWeight.bold,
   );
 
   static TextStyle cairo30Bold(BuildContext context) => TextStyle(
     fontSize: getResponsiveFontSize(context, fontSize: 30),
-    color: Colors.white,
+    color: AppColors.white,
     fontFamily: fontCairo,
     fontWeight: FontWeight.bold,
   );
   static TextStyle uthman24Bold(BuildContext context) => TextStyle(
     fontSize: getResponsiveFontSize(context, fontSize: 24),
-    color: Colors.white,
+    color: AppColors.white,
     fontFamily: fontUthmanTN1,
     fontWeight: FontWeight.bold,
   );
   static TextStyle uthman14Bold(BuildContext context) => TextStyle(
     fontSize: getResponsiveFontSize(context, fontSize: 18),
-    color: Colors.white,
+    color: AppColors.white,
     fontFamily: fontUthmanTN1,
     fontWeight: FontWeight.bold,
   );
 }
 
-double getResponsiveFontSize(context, {required double fontSize}) {
+double getResponsiveFontSize(BuildContext context, {required double fontSize}) {
   double scaleFactor = getScaleFactor(context);
   double responsiveFontSize = fontSize * scaleFactor;
 
@@ -40,7 +41,7 @@ double getResponsiveFontSize(context, {required double fontSize}) {
   return responsiveFontSize.clamp(lowerLimit, upperLimit);
 }
 
-double getScaleFactor(context) {
+double getScaleFactor(BuildContext context) {
   var dispatcher = PlatformDispatcher.instance;
   var physicalWidth = dispatcher.views.first.physicalSize.width;
   var devicePixelRatio = dispatcher.views.first.devicePixelRatio;

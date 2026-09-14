@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:muslim_werd_app/core/theming/colors.dart';
-import 'package:muslim_werd_app/core/theming/styles.dart';
+import 'package:muslim_werd_app/core/theme/app_colors.dart';
+import 'package:muslim_werd_app/core/theme/app_styles.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
     required this.onPressed,
-    this.backgroundColor = ColorsManager.tealWithOpacity,
+    this.backgroundColor = AppColors.primary,
     this.height = 60,
     this.width = 20,
     this.radius = 12,
@@ -24,14 +23,17 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.all(20.r),
+        padding: EdgeInsets.all(20),
         backgroundColor: backgroundColor,
-        minimumSize: Size(width.w, height.h),
+        minimumSize: Size(width, height),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(radius.r),
+          borderRadius: BorderRadius.circular(radius),
         ),
       ),
-      child: Text(textButton, style: TextStyles.cairo30Bold(context).copyWith(fontSize: 25.sp)),
+      child: Text(
+        textButton,
+        style: TextStyles.cairo30Bold(context).copyWith(fontSize: 25),
+      ),
     );
   }
 }

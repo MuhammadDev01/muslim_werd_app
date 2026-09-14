@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:muslim_werd_app/core/helper/extention.dart';
 import 'package:muslim_werd_app/core/routing/routes.dart';
 import 'package:muslim_werd_app/core/widgets/backgoroud_app.dart';
@@ -62,7 +61,7 @@ class _OnboardingThirdScreenState extends State<OnboardingThirdScreen>
         BookMarksListAnimated(bookmarkAnimation: _bookmarkAnimation),
 
         Positioned(
-          bottom: 50.h,
+          bottom: 50,
           child: CustomButton(
             textButton: 'توكل على الله',
             onPressed: () {

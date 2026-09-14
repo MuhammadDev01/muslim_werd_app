@@ -1,0 +1,1 @@
+export 'package:muslim_werd_app/features/prayer_times/domain/prayer_ui_model.dart';

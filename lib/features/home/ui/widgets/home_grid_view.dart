@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:muslim_werd_app/core/theming/assets.dart';
+import 'package:muslim_werd_app/core/theme/assets.dart';
 import 'package:muslim_werd_app/features/home/logic/home_grid_view_item_model.dart';
 import 'package:muslim_werd_app/features/home/ui/widgets/home_grid_view_item.dart';
 
@@ -34,7 +34,8 @@ class HomeGridView extends StatelessWidget {
       itemBuilder:
           (_, index) => InkWell(
             onTap: () {},
-            child: HomeGridViewItem(homeModel: homeModelList[index])),
+            child: HomeGridViewItem(homeModel: homeModelList[index]),
+          ),
       itemCount: homeModelList.length,
     );
   }

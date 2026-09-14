@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:muslim_werd_app/core/theming/assets.dart';
+import 'package:muslim_werd_app/core/theme/assets.dart';
 
 class BackgroundHome extends StatelessWidget {
   const BackgroundHome({super.key});

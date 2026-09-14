@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:muslim_werd_app/core/theming/styles.dart';
+import 'package:muslim_werd_app/core/theme/app_colors.dart';
+import 'package:muslim_werd_app/core/theme/app_styles.dart';
 
 class TableScreen extends StatefulWidget {
   const TableScreen({super.key});
@@ -58,9 +59,8 @@ class _TableScreenState extends State<TableScreen> {
           //textDirection: TextDirection.RTL,
           children: [
             TableRow(
-              decoration: BoxDecoration(color: Colors.blue),
+              decoration: BoxDecoration(color: AppColors.primary),
               children: [
-                
                 CustomTableCell(title: 'أذكار الصباح'),
                 CustomTableCell(title: 'الورد اليومي'),
                 CustomTableCell(title: 'أذكار المساء'),
@@ -78,15 +78,15 @@ class _TableScreenState extends State<TableScreen> {
                   ),
                   TableCell(
                     child: Checkbox(
-                      activeColor: Colors.teal,
-                      checkColor: Colors.white,
+                      activeColor: AppColors.primary,
+                      checkColor: AppColors.white,
                       value: true,
                       onChanged: (_) {},
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.all(12),
-                    child: TableCell(
+                  TableCell(
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
                       child: Center(
                         child: Column(
                           children: [
@@ -105,6 +105,7 @@ class _TableScreenState extends State<TableScreen> {
                       ),
                     ),
                   ),
+                  const TableCell(child: SizedBox.shrink()),
                 ],
               ),
           ],

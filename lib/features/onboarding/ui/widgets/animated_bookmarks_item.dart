@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:muslim_werd_app/core/theme/app_colors.dart';
 
 class AnimatedBookmarkItem extends StatelessWidget {
   const AnimatedBookmarkItem({
@@ -11,26 +11,22 @@ class AnimatedBookmarkItem extends StatelessWidget {
   final Animation bookmarkAnimation;
   final Color color;
   static List<Color> colorsList = const [
-    Colors.deepOrange,
-    Colors.blue,
-    Colors.white,
-    Colors.purple,
-    Colors.indigo,
-    Colors.teal,
+    AppColors.primary,
+    AppColors.primaryLight,
+    AppColors.accentGold,
+    AppColors.darkAccentGold,
+    AppColors.darkPrimary,
+    AppColors.secondary,
   ];
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: bookmarkAnimation,
-    
+
       builder:
           (_, child) => Opacity(opacity: bookmarkAnimation.value, child: child),
-    
-      child: Image.asset(
-        'assets/images/bookmark.png',
-        width: 70.w,
-        color: color,
-      ),
+
+      child: Image.asset('assets/images/bookmark.png', width: 70, color: color),
     );
   }
 }

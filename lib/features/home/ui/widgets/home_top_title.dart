@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:muslim_werd_app/core/theming/styles.dart';
+import 'package:muslim_werd_app/core/theme/app_styles.dart';
 
 class HomeTopTitle extends StatelessWidget {
   const HomeTopTitle({super.key});

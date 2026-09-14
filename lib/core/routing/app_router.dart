@@ -20,7 +20,7 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => OnboardingThirdScreen());
       //Home\\
       case Routes.homeScreen:
-        return MaterialPageRoute(builder: (_) => HomeScreen());
+        return MaterialPageRoute(builder: (_) => HomePage());
 
       default:
         return MaterialPageRoute(

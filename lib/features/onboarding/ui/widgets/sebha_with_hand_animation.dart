@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:muslim_werd_app/core/theming/assets.dart';
+import 'package:muslim_werd_app/core/theme/assets.dart';
 
 class SebhaWithHandAnimated extends StatelessWidget {
   const SebhaWithHandAnimated({super.key, required this.animation});
-final Animation animation;
+  final Animation animation;
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -16,7 +15,7 @@ final Animation animation;
               offset: Offset(0, animation.value),
               child: child,
             ),
-        child: Image.asset(Assets.imagesSebha, width: 400.w),
+        child: Image.asset(Assets.imagesSebha, width: 400),
       ),
     );
   }

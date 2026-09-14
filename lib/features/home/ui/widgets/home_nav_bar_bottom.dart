@@ -1,48 +1,64 @@
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:muslim_werd_app/core/theming/assets.dart';
-import 'package:muslim_werd_app/core/theming/colors.dart';
-import 'package:muslim_werd_app/core/theming/styles.dart';
-import 'package:muslim_werd_app/features/home/ui/home_screen.dart';
+import 'package:muslim_werd_app/core/constants.dart';
+import 'package:muslim_werd_app/core/theme/app_colors.dart';
 
-class HomeNavBarBottom extends StatefulWidget {
-  const HomeNavBarBottom({super.key});
-  @override
-  State<HomeNavBarBottom> createState() => _HomeNavBarBottomState();
-}
+class HomeNavBarBottom extends StatelessWidget {
+  const HomeNavBarBottom({
+    super.key,
+    required this.index,
+    required this.onIndexChanged,
+  });
 
-class _HomeNavBarBottomState extends State<HomeNavBarBottom> {
+  final int index;
+  final ValueChanged<int> onIndexChanged;
+
   @override
   Widget build(BuildContext context) {
     return CurvedNavigationBar(
-      backgroundColor: Colors.transparent,
-      animationDuration: Duration(milliseconds: 500),
-      color: ColorsManager.blackWithOpacity,
-      height: 160.h,
+      index: index,
+      backgroundColor: AppColors.transparent,
+      animationDuration: const Duration(milliseconds: 400),
+      animationCurve: Curves.easeInOut,
+      color: AppColors.white,
+      buttonBackgroundColor: AppColors.primary,
+      iconPadding: 10,
+      height: 70,
       items: [
-        CurvedNavigationBarItem(
-          child: Image.asset(Assets.imagesHouseIcon, height: 48.h, width: 48.w),
+        _item(
+          icon: Icons.home_rounded,
           label: 'الرئيسية',
-
-          labelStyle: TextStyles.amiri24Bold(
-            context,
-          ).copyWith(fontWeight: FontWeight.w900),
+          isSelected: index == 0,
         ),
-        CurvedNavigationBarItem(
-          child: Image.asset(Assets.imagesTableIcon, height: 48.h, width: 48.w),
+        _item(
+          icon: Icons.calendar_month_rounded,
           label: 'جدول المتابعة',
-          labelStyle: TextStyles.amiri24Bold(
-            context,
-          ).copyWith(fontWeight: FontWeight.w900),
+          isSelected: index == 1,
         ),
       ],
-      onTap: (value) {
-        setState(() {
-          HomeScreen.index = value;
-        });
-      },
+      onTap: onIndexChanged,
+    );
+  }
+
+  CurvedNavigationBarItem _item({
+    required IconData icon,
+    required String label,
+    required bool isSelected,
+  }) {
+    return CurvedNavigationBarItem(
+      child: Icon(
+        icon,
+        size: 26,
+        color: isSelected ? AppColors.white : AppColors.textSecondary,
+      ),
+      label: label,
+      labelStyle: TextStyle(
+        fontSize: 13,
+        fontFamily: fontCairo,
+        fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
+        color: isSelected ? AppColors.primary : AppColors.textSecondary,
+      ),
     );
   }
 }

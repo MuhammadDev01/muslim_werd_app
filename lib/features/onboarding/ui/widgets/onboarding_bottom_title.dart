@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:muslim_werd_app/core/theming/styles.dart';
+import 'package:muslim_werd_app/core/theme/app_styles.dart';
 
 class OnboardingBottomTitle extends StatelessWidget {
   const OnboardingBottomTitle({super.key});
@@ -8,7 +7,7 @@ class OnboardingBottomTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      bottom: 200.h,
+      bottom: 200,
       child: Column(
         spacing: 8,
         children: [

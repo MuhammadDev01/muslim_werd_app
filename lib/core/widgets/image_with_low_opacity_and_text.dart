@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:muslim_werd_app/core/theme/app_colors.dart';
 
 class BackgroundLowOpacityWithText extends StatelessWidget {
   const BackgroundLowOpacityWithText({
@@ -25,7 +26,7 @@ class BackgroundLowOpacityWithText extends StatelessWidget {
           alignment: Alignment.center,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
-            color: Colors.black54,
+            color: AppColors.black54,
           ),
           child: child,
         ),

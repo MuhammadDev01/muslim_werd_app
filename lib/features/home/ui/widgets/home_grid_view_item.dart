@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:muslim_werd_app/core/theming/styles.dart';
+import 'package:muslim_werd_app/core/theme/app_styles.dart';
 import 'package:muslim_werd_app/core/widgets/image_with_low_opacity_and_text.dart';
 import 'package:muslim_werd_app/features/home/logic/home_grid_view_item_model.dart';
 
