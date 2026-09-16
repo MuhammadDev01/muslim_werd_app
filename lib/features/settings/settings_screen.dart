@@ -30,36 +30,40 @@ class SettingsScreen extends StatelessWidget {
             valueListenable: ThemeController.mode,
             builder: (context, themeMode, _) {
               final isDark = themeMode == ThemeMode.dark;
-
               return ListView(
                 padding: const EdgeInsets.all(20),
                 children: [
                   Container(
+                    clipBehavior: Clip.antiAlias,
                     decoration: BoxDecoration(
-                      color: AppColors.surface,
                       borderRadius: BorderRadius.circular(16),
                       border: Border.all(color: AppColors.gold, width: 1),
                     ),
-                    child: SwitchListTile(
-                      value: isDark,
-                      onChanged: ThemeController.setDark,
-                      activeThumbColor: AppColors.white,
-                      activeTrackColor: AppColors.primary,
-                      title: const Text(
-                        'الوضع الداكن',
-                        style: TextStyle(
-                          fontFamily: fontCairo,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black,
+                    child: Material(
+                      type: MaterialType.transparency,
+                      borderRadius: BorderRadius.circular(16),
+                      child: SwitchListTile(
+                        value: isDark,
+                        onChanged: ThemeController.setDark,
+                        activeThumbColor: AppColors.white,
+                        activeTrackColor: AppColors.primary,
+                        tileColor: AppColors.surface,
+                        title: const Text(
+                          'الوضع الداكن',
+                          style: TextStyle(
+                            fontFamily: fontCairo,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.black,
+                          ),
                         ),
-                      ),
-                      subtitle: const Text(
-                        'استخدام خلفية داكنة في التطبيق',
-                        style: TextStyle(
-                          fontFamily: fontCairo,
-                          fontSize: 10,
-                          color: Colors.black,
+                        subtitle: const Text(
+                          'استخدام خلفية داكنة في التطبيق',
+                          style: TextStyle(
+                            fontFamily: fontCairo,
+                            fontSize: 10,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ),

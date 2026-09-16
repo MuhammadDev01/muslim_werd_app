@@ -61,7 +61,6 @@ class HomeCard extends StatelessWidget {
             children: [
               Column(
                 spacing: 4,
-
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
