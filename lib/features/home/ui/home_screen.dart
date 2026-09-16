@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:muslim_werd_app/core/theme/app_colors.dart';
 import 'package:muslim_werd_app/core/theme/assets.dart';
 import 'package:muslim_werd_app/features/home/ui/widgets/banner/home_banner.dart';
 import 'package:muslim_werd_app/features/home/ui/widgets/home_nav_bar_bottom.dart';
@@ -27,7 +26,6 @@ class _HomePageState extends State<HomePage> {
       textDirection: TextDirection.rtl,
       child: SafeArea(
         child: Scaffold(
-          backgroundColor: AppColors.darkPrimary,
           body: Stack(
             children: [
               Positioned.fill(

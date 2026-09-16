@@ -86,7 +86,7 @@ class HomeCard extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 7,
+                        fontSize: 8,
                         color: textColor ?? Colors.white.withValues(alpha: .75),
                         fontFamily: fontCairo,
                       ),

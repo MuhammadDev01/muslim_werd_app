@@ -6,7 +6,10 @@ class Eza3aScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('إذاعة القران الكريم من القاهرة')),
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text('إذاعة القران الكريم من القاهرة'),
+      ),
       body: Center(child: Text('Eza3a')),
     );
   }

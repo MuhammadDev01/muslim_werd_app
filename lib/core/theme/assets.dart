@@ -14,6 +14,8 @@ class Assets {
 
   static const String imagesEza3aIcon = "assets/images/eza3a_icon.png";
 
+  static const String imagesFavoritesIcon = "assets/images/favorites_icon.png";
+
   static const String imagesHouseIcon = "assets/images/house_icon.png";
 
   static const String imagesLightBackground = "assets/images/light_background.png";
@@ -29,8 +31,6 @@ class Assets {
   static const String imagesRadio = "assets/images/radio.jpeg";
 
   static const String imagesSebha = "assets/images/sebha.png";
-
-  static const String imagesSettingsIcon = "assets/images/settings_icon.png";
 
   static const String imagesTa7kkIcon = "assets/images/ta7kk_icon.png";
 

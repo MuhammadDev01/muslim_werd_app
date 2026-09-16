@@ -4,6 +4,7 @@ import 'package:muslim_werd_app/features/azkar/ui/azkar_screen.dart';
 import 'package:muslim_werd_app/features/eza3a/ui/eza3a_screen.dart';
 import 'package:muslim_werd_app/features/favorites/favorites_screen.dart';
 import 'package:muslim_werd_app/features/home/ui/home_screen.dart';
+import 'package:muslim_werd_app/features/notifications/ui/notifications_screen.dart';
 import 'package:muslim_werd_app/features/onboarding/ui/onboarding_screen.dart';
 import 'package:muslim_werd_app/features/onboarding/ui/onboarding_first_screen.dart';
 import 'package:muslim_werd_app/features/onboarding/ui/onboarding_second_screen.dart';
@@ -50,6 +51,8 @@ class AppRouter {
               (_) =>
                   SettingsScreen(), // Replace with your actual SettingsScreen widget
         );
+      case SubRoutes.notificationsScreen:
+        return MaterialPageRoute(builder: (_) => NotificationsScreen());
 
       default:
         return MaterialPageRoute(

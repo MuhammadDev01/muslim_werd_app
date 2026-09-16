@@ -18,4 +18,5 @@ class SubRoutes {
   static const tasbihScreen = "/tasbihScreen";
   static const eza3aScreen = "/eza3aScreen";
   static const settingsScreen = "/settingsScreen";
+  static const notificationsScreen = "/notificationsScreen";
 }

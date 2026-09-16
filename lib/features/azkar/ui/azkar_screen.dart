@@ -11,9 +11,7 @@ class AzkarScreen extends StatelessWidget {
         title: const Text('أذكار الصباح والمساء'),
         backgroundColor: AppColors.deepForest,
       ),
-      body: Center(
-        child: Text('AZkar', style: TextStyle(color: AppColors.white)),
-      ),
+      body: Center(child: Text('AZkar')),
     );
   }
 }

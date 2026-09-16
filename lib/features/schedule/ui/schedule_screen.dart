@@ -24,28 +24,6 @@ class _TableScreenState extends State<TableScreen> {
     dates.addAll(generateDates());
   }
 
-  // void toggleTask(DateTime date) {
-  //   setState(() {
-  //     taskMap[date]!.done = !taskMap[date]!.done;
-  //   });
-  // }
-
-  // void editTask(DateTime date) async {
-  //   final controller = TextEditingController();
-  //   await showDialog(
-  //     context: context,
-  //     builder:
-  //         (_) => AlertDialog(
-  //           title: Text('تعديل المهمة'),
-  //           content: TextField(
-  //             controller: controller,
-  //             decoration: InputDecoration(hintText: 'ادخل المهمة'),
-  //           ),
-  //           actions: [TextButton(child: Text('حفظ'), onPressed: () {})],
-  //         ),
-  //   );
-  // }
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -90,16 +68,8 @@ class _TableScreenState extends State<TableScreen> {
                       child: Center(
                         child: Column(
                           children: [
-                            Text(
-                              DateFormat.EEEE('ar').format(date),
-                              style: TextStyles.uthman24Bold(context),
-                            ),
-                            Text(
-                              DateFormat.MMMd('ar').format(date),
-                              style: TextStyles.uthman24Bold(
-                                context,
-                              ).copyWith(fontSize: 18),
-                            ),
+                            Text(DateFormat.EEEE('ar').format(date)),
+                            Text(DateFormat.MMMd('ar').format(date)),
                           ],
                         ),
                       ),

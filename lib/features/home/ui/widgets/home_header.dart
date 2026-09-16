@@ -18,7 +18,12 @@ class HomeHeader extends StatelessWidget {
 
           const Spacer(),
 
-          CircleIcon(icon: Icons.notifications_none_rounded, onTap: () {}),
+          CircleIcon(
+            icon: Icons.notifications_none_rounded,
+            onTap:
+                () =>
+                    Navigator.pushNamed(context, SubRoutes.notificationsScreen),
+          ),
         ],
       ),
     );
