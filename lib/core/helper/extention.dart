@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 extension Navigation on BuildContext {
+  Future<T?> push<T>(Widget page) =>
+      Navigator.push<T>(this, MaterialPageRoute(builder: (_) => page));
+
   Future<dynamic> pushNamed(String routeName, {Object? arguments}) =>
       Navigator.pushNamed(this, routeName, arguments: arguments);
 
@@ -17,4 +20,6 @@ extension Navigation on BuildContext {
     predicate,
     arguments: arguments,
   );
+
+  void pop<T extends Object?>([T? result]) => Navigator.pop<T>(this, result);
 }

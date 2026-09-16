@@ -6,8 +6,14 @@ class QuranScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('Quran', style: TextStyle(color: AppColors.white)),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('القرآن الكريم'),
+        backgroundColor: AppColors.deepBrick,
+      ),
+      body: Center(
+        child: Text('Quran', style: TextStyle(color: AppColors.white)),
+      ),
     );
   }
 }

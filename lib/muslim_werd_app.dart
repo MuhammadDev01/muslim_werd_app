@@ -18,7 +18,9 @@ class MuslimWerdApp extends StatelessWidget {
       ],
       title: 'Muslim Werd',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(brightness: Brightness.dark),
+      theme: ThemeData(brightness: Brightness.light),
+      darkTheme: ThemeData(brightness: Brightness.dark),
+      themeMode: ThemeMode.system,
       initialRoute: Routes.homeScreen,
       onGenerateRoute: AppRouter.generateRoute,
     );

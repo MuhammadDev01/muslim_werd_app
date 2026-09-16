@@ -6,8 +6,14 @@ class AzkarScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('AZkar', style: TextStyle(color: AppColors.white)),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('أذكار الصباح والمساء'),
+        backgroundColor: AppColors.deepForest,
+      ),
+      body: Center(
+        child: Text('AZkar', style: TextStyle(color: AppColors.white)),
+      ),
     );
   }
 }

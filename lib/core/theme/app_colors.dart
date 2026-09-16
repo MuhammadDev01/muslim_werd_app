@@ -37,6 +37,15 @@ class AppColors {
   static const softGreen = Color(0xFFEAF5ED);
   static const softGold = Color(0xFFFFEBC8);
 
+  // ==================== HOME CARDS ====================
+  // خلفيات داكنة تظهر عليها النصوص البيضاء وتظل متناسقة مع هوية التطبيق
+
+  static const deepForest = Color(0xFF2F6B4F);
+  static const deepTeal = Color(0xFF1F5E54);
+  static const deepGold = Color(0xFF8A6D2F);
+  static const deepBrick = Color(0xFF8A4A2F);
+  static const deepBurgundy = Color(0xFF6F3F4F);
+
   // ===================== BANNER SCENE =====================
 
   static const fajrSkyTop = Color(0xFF759CAF);

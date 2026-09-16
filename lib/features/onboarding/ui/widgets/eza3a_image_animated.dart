@@ -11,7 +11,7 @@ class Eza3aImageWithAnimated extends StatelessWidget {
       builder:
           (_, child) => Transform.translate(offset: Offset(0, 0), child: child),
       child: Image.asset(
-        Assets.imagesEza3a,
+        Assets.imagesEza3aIcon,
         width: 600,
         // color: AppColors.tealWithOpacity,
       ),

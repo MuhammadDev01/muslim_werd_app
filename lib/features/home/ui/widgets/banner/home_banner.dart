@@ -94,40 +94,9 @@ class _HomeBannerState extends State<HomeBanner>
           SunOrMoon(scene: scene),
           Clouds(scene: scene),
           if (widget.activePrayer == PrayerType.fajr) const Stars(),
-          // Positioned(
-          //   bottom: 0,
-          //   left: 0,
-          //   right: 0,
-          //   child: MosqueScene(color: scene.mosqueColor),
-          // ),
           HomeHeader(),
         ],
       ),
     );
   }
 }
-
-// =====================================================
-// TOP CONTENT
-// =====================================================
-// SafeArea(
-//   child: Padding(
-//     padding: const EdgeInsets.all(20),
-//     child: Column(
-//       children: [
-//         BannerTitle(scene: scene),
-//         const Gap(18),
-//         PrayerInfo(
-//           activePrayer: widget.activePrayer,
-//           prayers: widget.prayers,
-//           scene: scene,
-//         ),
-//         const Spacer(),
-//         PrayerCountdown(
-//           remaining: widget.remaining,
-//           foreground: scene.foreground,
-//         ),
-//       ],
-//     ),
-//   ),
-// ),
