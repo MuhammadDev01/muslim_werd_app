@@ -39,7 +39,7 @@ class HomeCategories extends StatelessWidget {
           title: 'المفضلة',
           subtitle: 'ما تحب أن تعود إليه',
           imageIcon: Assets.imagesFavoritesIcon,
-          background: AppColors.deepGold,
+          background: AppColors.deepBlue,
           onTap: () => context.pushNamed(SubRoutes.favoriteScreen),
         ),
         HomeCard(
@@ -61,7 +61,7 @@ class HomeCategories extends StatelessWidget {
           title: 'تسبيح',
           subtitle: 'تسبيح وذكر الله',
           imageIcon: Assets.imagesTasbihIcon,
-          background: AppColors.deepBurgundy,
+          background: AppColors.deepGold,
           onTap: () => context.pushNamed(SubRoutes.tasbihScreen),
         ),
       ],

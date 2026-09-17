@@ -42,9 +42,9 @@ class AppColors {
 
   static const deepForest = Color(0xFF2F6B4F);
   static const deepTeal = Color(0xFF1F5E54);
-  static const deepGold = Color(0xFF8A6D2F);
-  static const deepBrick = Color(0xFF8A4A2F);
-  static const deepBurgundy = Color(0xFF6F3F4F);
+  static const deepGold = Color(0xFF231632);
+  static const deepBrick = Color.fromARGB(255, 35, 104, 141);
+  static const deepBlue = Color.fromARGB(255, 136, 40, 53);
 
   // ===================== BANNER SCENE =====================
 
