@@ -11,7 +11,7 @@ import 'package:muslim_werd_app/features/onboarding/ui/onboarding_second_screen.
 import 'package:muslim_werd_app/features/onboarding/ui/onboarding_third_screen.dart';
 import 'package:muslim_werd_app/features/quran/ui/quran_screen.dart';
 import 'package:muslim_werd_app/features/settings/settings_screen.dart';
-import 'package:muslim_werd_app/features/ta7kk_7adeth/ta7kk_screen.dart';
+import 'package:muslim_werd_app/features/ta7kk_7adeth/presentation/ta7kk_screen.dart';
 import 'package:muslim_werd_app/features/tasbih/ui/tasbe7_screen.dart';
 
 class AppRouter {
