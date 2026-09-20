@@ -43,4 +43,17 @@ void main() {
   test('returns empty list for empty html', () {
     expect(DorarHtmlParser().parse(''), isEmpty);
   });
+
+  test('strips opening tag style and result numbering from text', () {
+    const html =
+        '<div class="hadith" style="text-align:justify;">3 - أُمِرْنا بصَومِ عاشوراءَ قبلَ أن يفرضَ رمضانُ .</div>\n'
+        '<div class="hadith-info">\n    <span class="info-subtitle">الراوي:</span> عمر بن الخطاب</span>\n'
+        '</div>';
+
+    final result = DorarHtmlParser().parse(html).single;
+
+    expect(result.text, startsWith('أُمِرْنا'));
+    expect(result.text, isNot(contains('style=')));
+    expect(RegExp(r'^\d').hasMatch(result.text), isFalse);
+  });
 }

@@ -28,7 +28,12 @@ class DorarHtmlParser {
   String _extractHadithText(String block) {
     final infoIndex = block.indexOf('<div class="hadith-info"');
     final chunk = infoIndex == -1 ? block : block.substring(0, infoIndex);
-    return _cleanHtml(chunk);
+
+    // يزيل بقايا opening tag ("style=...>") وأرقام النتائج ("1 -") قبل تنظيف النص
+    return _cleanHtml(chunk)
+        .replaceFirst(RegExp(r'^[^>]*>'), '')
+        .replaceFirst(RegExp(r'^\s*\d+\s*-\s*'), '')
+        .trim();
   }
 
   String _extractInfo(String block, String subtitle) {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:muslim_werd_app/core/theme/assets.dart';
+import 'package:muslim_werd_app/core/widgets/app_background.dart';
 import 'package:muslim_werd_app/features/home/ui/widgets/banner/home_banner.dart';
 import 'package:muslim_werd_app/features/home/ui/widgets/home_nav_bar_bottom.dart';
 import 'package:muslim_werd_app/features/home/ui/widgets/home_categories.dart';
@@ -28,14 +28,7 @@ class _HomePageState extends State<HomePage> {
         child: Scaffold(
           body: Stack(
             children: [
-              Positioned.fill(
-                child: Image.asset(
-                  Theme.of(context).brightness == Brightness.dark
-                      ? Assets.imagesDarkBackground
-                      : Assets.imagesLightBackground,
-                  fit: BoxFit.cover,
-                ),
-              ),
+              const AppBackground(),
               selectedIndex == 0 ? _buildHomeContent() : const TableScreen(),
             ],
           ),

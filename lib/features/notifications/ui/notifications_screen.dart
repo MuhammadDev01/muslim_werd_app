@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:muslim_werd_app/core/constants.dart';
 
 class NotificationsScreen extends StatelessWidget {
@@ -24,7 +25,7 @@ class NotificationsScreen extends StatelessWidget {
               size: 72,
               color: theme.colorScheme.outline,
             ),
-            const SizedBox(height: 12),
+            const Gap(12),
             Text(
               'لا توجد إشعارات بعد',
               style: TextStyle(
