@@ -54,6 +54,7 @@ flutter:
   # Assets
   assets:
     - assets/images/
+    - assets/data/quran.json
 
   # Fonts
   fonts:
@@ -72,3 +73,7 @@ flutter:
     - family: UthmanTN1
       fonts:
         - asset: assets/fonts/UthmanTN1-Ver10.otf
+
+    - family: AmiriQuran
+      fonts:
+        - asset: assets/fonts/AmiriQuran/AmiriQuran-Regular.ttf

@@ -9,7 +9,7 @@ import 'package:muslim_werd_app/features/onboarding/ui/onboarding_screen.dart';
 import 'package:muslim_werd_app/features/onboarding/ui/onboarding_first_screen.dart';
 import 'package:muslim_werd_app/features/onboarding/ui/onboarding_second_screen.dart';
 import 'package:muslim_werd_app/features/onboarding/ui/onboarding_third_screen.dart';
-import 'package:muslim_werd_app/features/quran/ui/quran_screen.dart';
+import 'package:muslim_werd_app/features/quran/presentation/quran_index_screen.dart';
 import 'package:muslim_werd_app/features/settings/settings_screen.dart';
 import 'package:muslim_werd_app/features/ta7kk_7adeth/presentation/ta7kk_screen.dart';
 import 'package:muslim_werd_app/features/tasbih/ui/tasbe7_screen.dart';
@@ -34,7 +34,7 @@ class AppRouter {
 
       ///home
       case SubRoutes.quranScreen:
-        return MaterialPageRoute(builder: (_) => QuranScreen());
+        return MaterialPageRoute(builder: (_) => const QuranIndexScreen());
       case SubRoutes.azkarScreen:
         return MaterialPageRoute(builder: (_) => AzkarScreen());
       case SubRoutes.favoriteScreen:
