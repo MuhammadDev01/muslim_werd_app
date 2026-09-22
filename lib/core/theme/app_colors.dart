@@ -45,8 +45,7 @@ class AppColors {
   static const deepTeal = Color(0xFF1F5E54);
   static const deepGold = Color(0xFF231632);
   static const deepBrick = Color.fromARGB(255, 35, 104, 141);
-  static const deepBlue = Color.fromARGB(255, 136, 40, 53);
-
+  static const deepRed = Color(0xFFC62828);
   // ===================== BANNER SCENE =====================
 
   static const fajrSkyTop = Color(0xFF759CAF);

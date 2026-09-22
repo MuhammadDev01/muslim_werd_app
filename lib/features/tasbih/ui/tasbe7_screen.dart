@@ -9,7 +9,7 @@ class TasbihScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('تسبيح'),
-        backgroundColor: AppColors.deepBlue,
+        backgroundColor: AppColors.deepRed,
       ),
       body: Center(
         child: Text('Tasbih', style: TextStyle(color: AppColors.white)),

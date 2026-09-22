@@ -2,8 +2,6 @@
 class Assets {
   Assets._();
   
-  static const String imagesAlquranAlkareem = "assets/images/alquran_alkareem.png";
-
   static const String imagesAzkarIcon = "assets/images/azkar_icon.png";
 
   static const String imagesBookmark = "assets/images/bookmark.png";
@@ -22,13 +20,11 @@ class Assets {
 
   static const String imagesMobileBackground = "assets/images/mobile_background.jpeg";
 
-  static const String imagesOnBoardingSchedule = "assets/images/onBoarding_schedule.png";
-
-  static const String imagesOnboardingCircleDesign = "assets/images/onboarding_circle_design.png";
-
   static const String imagesQuranIcon = "assets/images/quran_icon.png";
 
   static const String imagesRadio = "assets/images/radio.jpeg";
+
+  static const String imagesRadioPng = "assets/images/radio.png";
 
   static const String imagesSebha = "assets/images/sebha.png";
 

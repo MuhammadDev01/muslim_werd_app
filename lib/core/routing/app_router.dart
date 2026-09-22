@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:muslim_werd_app/core/routing/routes.dart';
 import 'package:muslim_werd_app/features/azkar/ui/azkar_screen.dart';
-import 'package:muslim_werd_app/features/eza3a/ui/eza3a_screen.dart';
+import 'package:muslim_werd_app/features/eza3a/presentation/eza3a_screen.dart';
 import 'package:muslim_werd_app/features/favorites/favorites_screen.dart';
 import 'package:muslim_werd_app/features/home/ui/home_screen.dart';
 import 'package:muslim_werd_app/features/notifications/ui/notifications_screen.dart';

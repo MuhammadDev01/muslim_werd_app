@@ -91,27 +91,29 @@ class _WaveformPainter extends CustomPainter {
 
     for (var i = 0; i < barCount; i++) {
       final value = _value(i);
-      final h = (size.height * 0.92 * value * amp).clamp(4.0, size.height * 0.92);
+      final h = (size.height * 0.92 * value * amp).clamp(
+        4.0,
+        size.height * 0.92,
+      );
       final rect = Rect.fromLTWH(i * barW + gap / 2, midH - h / 2, w, h);
       final rrect = RRect.fromRectAndRadius(rect, radius);
 
       final shader = LinearGradient(
         begin: Alignment.bottomCenter,
         end: Alignment.topCenter,
-        colors: active
-            ? [AppColors.primary, AppColors.primaryLight]
-            : [
-                AppColors.deepTeal.withValues(alpha: 0.45),
-                AppColors.deepTeal.withValues(alpha: 0.15),
-              ],
+        colors:
+            active
+                ? [AppColors.primary, AppColors.primaryLight]
+                : [
+                  AppColors.deepTeal.withValues(alpha: 0.45),
+                  AppColors.deepTeal.withValues(alpha: 0.15),
+                ],
       ).createShader(rect);
 
-      final paint = Paint()
-        ..shader = shader
-        ..isAntiAlias = true;
-      if (active) {
-        paint.maskFilter = MaskFilter.blur(BlurStyle.normal, 5 + value * 6);
-      }
+      final paint =
+          Paint()
+            ..shader = shader
+            ..isAntiAlias = true;
       canvas.drawRRect(rrect, paint);
     }
   }

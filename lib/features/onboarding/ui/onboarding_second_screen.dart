@@ -51,7 +51,7 @@ class _OnboardingSecondScreenState extends State<OnboardingSecondScreen>
                 offset: Offset(0, _animation.value),
                 child: child,
               ),
-          child: Image.asset(Assets.imagesOnBoardingSchedule),
+          child: Image.asset(Assets.imagesTableIcon),
         ),
         OnboardingTopTitle(text: 'جدول متابعة لوردك'),
         Positioned(

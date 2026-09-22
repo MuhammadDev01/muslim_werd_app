@@ -39,7 +39,7 @@ class HomeCategories extends StatelessWidget {
           title: 'المفضلة',
           subtitle: 'ما تحب أن تعود إليه',
           imageIcon: Assets.imagesFavoritesIcon,
-          background: AppColors.deepBlue,
+          background: AppColors.deepRed,
           onTap: () => context.pushNamed(SubRoutes.favoriteScreen),
         ),
         HomeCard(
