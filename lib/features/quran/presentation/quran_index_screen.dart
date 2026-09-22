@@ -43,8 +43,9 @@ class _QuranIndexScreenState extends State<QuranIndexScreen> {
               bloc: _cubit,
               builder: (context, state) {
                 return switch (state.status) {
-                  QuranStatus.loading =>
-                    const Center(child: CircularProgressIndicator()),
+                  QuranStatus.loading => const Center(
+                    child: CircularProgressIndicator(),
+                  ),
                   QuranStatus.failure => _ErrorView(
                     message: state.errorMessage ?? 'حدث خطأ غير متوقع',
                     onRetry: _cubit.loadIndex,
@@ -94,12 +95,10 @@ class _SurahTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final surface = isDark ? AppColors.darkSurface : AppColors.surface;
-    final primaryText = isDark
-        ? AppColors.darkTextPrimary
-        : AppColors.textPrimary;
-    final secondaryText = isDark
-        ? AppColors.darkTextSecondary
-        : AppColors.textSecondary;
+    final primaryText =
+        isDark ? AppColors.darkTextPrimary : AppColors.textPrimary;
+    final secondaryText =
+        isDark ? AppColors.darkTextSecondary : AppColors.textSecondary;
 
     return Material(
       color: surface,
@@ -150,10 +149,7 @@ class _SurahTile extends StatelessWidget {
                   ],
                 ),
               ),
-              Icon(
-                Icons.chevron_left,
-                color: AppColors.gold,
-              ),
+              Icon(Icons.chevron_left, color: AppColors.gold),
             ],
           ),
         ),
@@ -206,7 +202,11 @@ class _ErrorView extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Icon(Icons.cloud_off, size: 48, color: AppColors.textSecondary),
+            const Icon(
+              Icons.cloud_off,
+              size: 48,
+              color: AppColors.textSecondary,
+            ),
             const Gap(12),
             Text(
               message,
