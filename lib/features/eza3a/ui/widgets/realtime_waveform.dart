@@ -10,7 +10,7 @@ class RealtimeWaveform extends StatefulWidget {
     required this.isActive,
     required this.volume,
     this.barCount = 40,
-    this.height = 120,
+    this.height = 110,
   });
 
   final bool isActive;
@@ -86,28 +86,33 @@ class _WaveformPainter extends CustomPainter {
     final gap = barW * 0.28;
     final w = barW - gap;
     final radius = Radius.circular(w / 2);
-
-    final primary = Paint()..color = AppColors.primary;
-    final light = Paint()..color = AppColors.primaryLight;
-    final dim = Paint()..color = AppColors.deepTeal;
-
     final midH = size.height * 0.5;
     final amp = active ? 0.35 + 0.65 * volume : 0.06;
 
     for (var i = 0; i < barCount; i++) {
       final value = _value(i);
-      final h = (size.height * 0.94 * value * amp).clamp(4.0, size.height);
-      final rect = RRect.fromRectAndRadius(
-        Rect.fromLTWH(
-          i * barW + gap / 2,
-          midH - h / 2,
-          w,
-          h,
-        ),
-        radius,
-      );
-      final paint = active ? (i.isEven ? primary : light) : dim;
-      canvas.drawRRect(rect, paint);
+      final h = (size.height * 0.92 * value * amp).clamp(4.0, size.height * 0.92);
+      final rect = Rect.fromLTWH(i * barW + gap / 2, midH - h / 2, w, h);
+      final rrect = RRect.fromRectAndRadius(rect, radius);
+
+      final shader = LinearGradient(
+        begin: Alignment.bottomCenter,
+        end: Alignment.topCenter,
+        colors: active
+            ? [AppColors.primary, AppColors.primaryLight]
+            : [
+                AppColors.deepTeal.withValues(alpha: 0.45),
+                AppColors.deepTeal.withValues(alpha: 0.15),
+              ],
+      ).createShader(rect);
+
+      final paint = Paint()
+        ..shader = shader
+        ..isAntiAlias = true;
+      if (active) {
+        paint.maskFilter = MaskFilter.blur(BlurStyle.normal, 5 + value * 6);
+      }
+      canvas.drawRRect(rrect, paint);
     }
   }
 
