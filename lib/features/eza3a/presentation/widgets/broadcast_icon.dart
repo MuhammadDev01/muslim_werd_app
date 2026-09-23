@@ -58,42 +58,81 @@ class _BroadcastIconState extends State<BroadcastIcon>
       child: SizedBox(
         width: widget.size * 1.4,
         height: widget.size * 1.4,
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            for (var i = 0; i < 3; i++) _buildRing(i),
-          ],
+        child: RepaintBoundary(
+          child: AnimatedBuilder(
+            animation: _controller,
+            builder:
+                (context, _) => CustomPaint(
+                  painter: _BroadcastRingsPainter(
+                    progress: _controller.value,
+                    active: widget.active,
+                    size: widget.size,
+                    color: widget.color,
+                  ),
+                ),
+          ),
         ),
       ),
     );
   }
+}
 
-  Widget _buildRing(int i) {
-    final phase = (_controller.value + i / 3) % 1.0;
-    final animate = widget.active;
-    final scale = animate ? ui.lerpDouble(0.92, 1.38, phase)! : 1.06;
-    final opacity = animate ? 0.55 * (1 - phase) : 0.2;
+class _BroadcastRingsPainter extends CustomPainter {
+  _BroadcastRingsPainter({
+    required this.progress,
+    required this.active,
+    required this.size,
+    required this.color,
+  });
 
-    return Transform.scale(
-      scale: scale,
-      child: Container(
-        width: widget.size,
-        height: widget.size,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          border: Border.all(
-            color: widget.color.withValues(alpha: opacity),
-            width: 3,
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: widget.color.withValues(alpha: opacity * 0.45),
-              blurRadius: 14,
-              spreadRadius: -1,
-            ),
-          ],
-        ),
-      ),
-    );
+  final double progress;
+  final bool active;
+  final double size;
+  final Color color;
+
+  @override
+  void paint(Canvas canvas, Size canvasSize) {
+    final center = canvasSize.center(Offset.zero);
+    const periodMs = 2000.0;
+    const intervalMs = 1000.0;
+    const lifeMs = 1680.0;
+
+    final t = progress * periodMs;
+    final oldest = t - lifeMs;
+    final first = (oldest / intervalMs).floor();
+    final last = (t / intervalMs).floor();
+
+    for (var k = first; k <= last; k++) {
+      final age = t - k * intervalMs;
+      final f = age / lifeMs;
+      final scale = ui.lerpDouble(0.1, 1.2, f)!;
+      final radius = size / 2 * scale;
+      final opacity = 0.4 * (1 - f);
+
+      canvas.drawCircle(
+        center,
+        radius + 12,
+        Paint()
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 8
+          ..color = color.withValues(alpha: opacity * 0.1),
+      );
+      canvas.drawCircle(
+        center,
+        radius,
+        Paint()
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 3
+          ..color = color.withValues(alpha: opacity),
+      );
+    }
+  }
+
+  @override
+  bool shouldRepaint(_BroadcastRingsPainter oldDelegate) {
+    return oldDelegate.progress != progress ||
+        oldDelegate.active != active ||
+        oldDelegate.size != size ||
+        oldDelegate.color != color;
   }
 }

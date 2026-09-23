@@ -22,9 +22,7 @@ class Assets {
 
   static const String imagesQuranIcon = "assets/images/quran_icon.png";
 
-  static const String imagesRadio = "assets/images/radio.jpeg";
-
-  static const String imagesRadioPng = "assets/images/radio.png";
+  static const String imagesRadio = "assets/images/radio.png";
 
   static const String imagesSebha = "assets/images/sebha.png";
 

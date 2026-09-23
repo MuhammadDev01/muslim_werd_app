@@ -50,14 +50,7 @@ class PlayButton extends StatelessWidget {
             child: Center(
               child:
                   busy
-                      ? const SizedBox(
-                        width: 30,
-                        height: 30,
-                        child: CircularProgressIndicator(
-                          strokeWidth: 3,
-                          color: AppColors.white,
-                        ),
-                      )
+                      ? CircularProgressIndicator(color: AppColors.white)
                       : AnimatedSwitcher(
                         duration: const Duration(milliseconds: 250),
                         transitionBuilder:

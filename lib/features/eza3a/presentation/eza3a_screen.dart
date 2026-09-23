@@ -86,20 +86,22 @@ class _Eza3aBody extends StatelessWidget {
                               GlassPanel(
                                 child: Column(
                                   children: [
+                                    Gap(50),
                                     SizedBox(
                                       height: 150,
                                       child: Stack(
                                         fit: StackFit.expand,
                                         clipBehavior: Clip.antiAlias,
                                         children: [
-                                          BroadcastIcon(
-                                            active: active,
-                                            size: 150,
-                                            color: AppColors.primary,
-                                          ),
+                                          if (active)
+                                            BroadcastIcon(
+                                              active: true,
+                                              size: 200,
+                                              color: AppColors.primary,
+                                            ),
                                           Image.asset(
-                                            Assets.imagesRadioPng,
-                                            fit: BoxFit.contain,
+                                            Assets.imagesRadio,
+                                            fit: BoxFit.cover,
                                           ),
                                         ],
                                       ),
@@ -111,6 +113,8 @@ class _Eza3aBody extends StatelessWidget {
                                         errorMessage: state.errorMessage,
                                       ),
                                     ],
+                                    Gap(50),
+
                                     RealtimeWaveform(
                                       isActive: active,
                                       volume: state.volume,

@@ -1,8 +1,7 @@
-import 'dart:async' show TimeoutException, runZonedGuarded;
+import 'dart:async' show TimeoutException;
 import 'dart:io' show IOException;
 import 'dart:ui' show PlatformDispatcher;
 
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show PlatformException;
 import 'package:intl/date_symbol_data_local.dart';
@@ -14,7 +13,7 @@ bool _isStreamNoise(Object error) {
   if (error is IOException) return true;
   if (error is TimeoutException) return true;
   if (error is PlatformException) {
-    const knownCodes = {'0', '10000000', '100000001'};
+    const knownCodes = {'0', '10000000', '100000001Zone mismatch.'};
     final message = error.message;
     if (knownCodes.contains(error.code)) return true;
     if (message != null &&
@@ -27,8 +26,8 @@ bool _isStreamNoise(Object error) {
 }
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await initializeDateFormatting("ar");
-  DevicePreview.enable();
   PlatformDispatcher.instance.onError = (Object error, StackTrace stack) {
     if (_isStreamNoise(error)) return true;
     FlutterError.reportError(
@@ -36,12 +35,5 @@ void main() async {
     );
     return true;
   };
-  runZonedGuarded(() {
-    runApp(const MuslimWerdApp());
-  }, (Object error, StackTrace stack) {
-    if (_isStreamNoise(error)) return;
-    FlutterError.reportError(
-      FlutterErrorDetails(exception: error, stack: stack),
-    );
-  });
+  runApp(const MuslimWerdApp());
 }

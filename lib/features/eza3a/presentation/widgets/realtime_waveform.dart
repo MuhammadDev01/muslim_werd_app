@@ -10,7 +10,7 @@ class RealtimeWaveform extends StatefulWidget {
     required this.isActive,
     required this.volume,
     this.barCount = 40,
-    this.height = 110,
+    this.height = 60,
   });
 
   final bool isActive;
@@ -104,10 +104,7 @@ class _WaveformPainter extends CustomPainter {
         colors:
             active
                 ? [AppColors.primary, AppColors.primaryLight]
-                : [
-                  AppColors.deepTeal.withValues(alpha: 0.45),
-                  AppColors.deepTeal.withValues(alpha: 0.15),
-                ],
+                : const [AppColors.darkAccentGold, AppColors.darkAccentGold],
       ).createShader(rect);
 
       final paint =
